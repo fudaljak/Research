@@ -1,0 +1,19 @@
+import random
+import math
+
+
+PARTICLE_TO_POLYMER_RATIO = 10
+NUMBER_DIMENSIONS = 3
+
+Box_Side_Dim = int(input("Enter a side length for the Simulation Box: "))
+
+print ("now creating random number of polymers in Sim box:")
+num_polymers = str(random.randint(1,20))
+print ("There are " + num_polymers + " polymers")
+num_particles = int(num_polymers) * PARTICLE_TO_POLYMER_RATIO
+print ("Each polymer has 10 particles per polymer, so there are", num_particles, "Particles in Sim box")
+
+print ("Now assigning locations to each particle:")
+
+Particle_locations = [[[random.randint(0, Box_Side_Dim)] for _ in range(NUMBER_DIMENSIONS)] for _ in range(num_particles)]
+##This creates a list of lists, a list of particles, with a list of their x, y, and z coordinates. Using print() can call a chosen particle's coordinates in the sim
